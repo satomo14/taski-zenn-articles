@@ -11,6 +11,11 @@ npm install
 npm run preview
 ```
 
+## Zenn連携
+
+Zennアカウント: `taski_app`（表示名: とも / Taski開発者）
+連携リポジトリ: このリポジトリ（`satomo14/taski-zenn-articles`）
+
 ## 運用ルール
 
 - 投稿済みの記事は、このリポジトリからは削除しない（Zenn側は削除するとpush連携で記事も削除されるため、`published: false` に変更する運用とする）
