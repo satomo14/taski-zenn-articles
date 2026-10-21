@@ -1,5 +1,5 @@
 ---
-title: "【個人開発SaaS】開発中にブラウザを開きたくないので、Cursor / Claude Codeから直結できる「自前MCPサーバー」を作った話"
+title: "【個人開発SaaS】開発中にブラウザを開きたくないので、Cursor / Claudeから直結できる「自前MCPサーバー」を作った話"
 emoji: "🤖"
 type: "tech"
 topics: ["mcp", "typescript", "supabase", "cursor", "個人開発"]
