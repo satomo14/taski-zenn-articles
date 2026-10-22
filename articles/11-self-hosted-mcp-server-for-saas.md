@@ -187,36 +187,52 @@ console.error('[taski-mcp] Fetching tickets for project:', projectId);
 
 AI は時として、プロジェクトIDに UUID ではなく「プロジェクト名（例: バグ報告）」を渡してきたり、ステータスに「完了」という日本語を入れてきたりします。
 
-ツール側のヘルパーで、このゆらぎを自然に吸収できるように設計しました。
+当初はサーバー側のヘルパーで名前をあいまいに部分一致させる実装にしていましたが、**似た名前のプロジェクトが複数あると、更新系の操作で意図しないプロジェクトを触ってしまう危険がある**ことに気づき、設計を見直しました。現在は「読み取りは候補一覧を返すだけ、更新は確定したIDでしか実行できない」という役割分担にしています。
+
+まず `list_projects` ツールで、参加プロジェクトの `id` と `name` をそのまま一覧で返します。
 
 ```typescript
-// プロジェクト指定のゆらぎ吸収（UUIDでもプロジェクト名でもOKにする）
-export async function resolveProjectId(
-  auth: AuthContext,
-  projectIdOrName?: string
-): Promise<string> {
-  const { data: projects } = await auth.client.from('projects').select('id, name');
+export async function handleListProjects(auth: AuthContext) {
+  const { data: memberRows, error } = await auth.client
+    .from('project_members')
+    .select('project_id, role, projects(id, name, created_at)')
+    .eq('user_id', auth.userId);
 
-  if (!projectIdOrName) {
-    // 未指定時は直近のプロジェクトを自動選択
-    return projects[0].id;
-  }
+  if (error) throw new Error(`プロジェクト一覧の取得に失敗しました: ${error.message}`);
 
-  // 1. 完全一致するUUIDか？
-  const byId = projects.find((p) => p.id === projectIdOrName);
-  if (byId) return byId.id;
-
-  // 2. プロジェクト名での部分一致・あいまい検索
-  const byName = projects.find((p) =>
-    p.name.toLowerCase().includes(projectIdOrName.toLowerCase())
-  );
-  if (byName) return byName.id;
-
-  throw new Error(`プロジェクト「${projectIdOrName}」が見つかりませんでした。`);
+  return {
+    projects: (memberRows || [])
+      .map((row: any) => row.projects && { id: row.projects.id, name: row.projects.name, role: row.role })
+      .filter(Boolean),
+  };
 }
 ```
 
-これにより、ユーザーが「バグ報告プロジェクトにチケット作って」とラフに指示しても、AI が迷わず正しい ID を解決してくれます。
+AI はこの一覧から名前で該当プロジェクトを判断し、以降のツール呼び出しには**確定した `id` を渡す**という流れにします。更新系ツールが受け取るのは原則IDだけで、サーバー側で名前をあいまいに解決することはしません。
+
+```typescript
+// 更新系ツールが使う: 明示的なIDがあればそれを使う。無ければ先頭プロジェクトへフォールバック（名前のあいまい一致はしない）
+export async function resolveProjectId(
+  auth: AuthContext,
+  explicitProjectId?: string
+): Promise<string> {
+  if (explicitProjectId) return explicitProjectId;
+
+  const { data: memberRows } = await auth.client
+    .from('project_members')
+    .select('project_id')
+    .eq('user_id', auth.userId)
+    .limit(1);
+
+  if (memberRows && memberRows.length > 0) return memberRows[0].project_id;
+
+  throw new Error('操作対象のプロジェクトが見つかりません。project_id を指定してください。');
+}
+```
+
+こうすると、「バグ報告プロジェクトにチケット作って」とラフに指示されても、AI はまず一覧から正しいプロジェクトを選び、確定したIDで更新を実行する、という安全な流れになります。
+
+*2026-10-22 追記: 読者の方からのご指摘を受け、本節のコード例を現在の実装に合わせて更新しました。*
 
 ---
 
