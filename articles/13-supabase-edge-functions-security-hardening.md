@@ -328,3 +328,4 @@ Supabase のような BaaS（Backend as a Service）は、インフラの面倒�
 ログイン不要・1秒で立ち上がるデモ画面で、サクサク動くプロジェクト管理を体験できますので、ぜひ触ってみてください！
 
 👉 **[Taski（タスキ）を登録不要のデモで試す](https://taski-app.com/?demo=true)**
+
