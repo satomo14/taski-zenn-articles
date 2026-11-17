@@ -6,7 +6,7 @@ topics: ["supabase", "deno", "security", "個人開発", "typescript"]
 published: true
 ---
 
-個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com)」を開発・運用しています。
+個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=13_edge_functions_security)」を開発・運用しています。
 
 Supabase の **Edge Functions**（Deno ランタイム）は、モダンな個人開発 SaaS にとって無くてはならない強力な武器です。Webhook の非同期処理、Resend を使ったメール通知、`pg_cron` と組み合わせた期日リマインドや定期タスクの自動生成など、サーバーレスで爆速にバックエンド機能を構築できます。
 
@@ -327,5 +327,5 @@ Supabase のような BaaS（Backend as a Service）は、インフラの面倒�
 
 ログイン不要・1秒で立ち上がるデモ画面で、サクサク動くプロジェクト管理を体験できますので、ぜひ触ってみてください！
 
-👉 **[Taski（タスキ）を登録不要のデモで試す](https://taski-app.com/?demo=true)**
+👉 **[Taski（タスキ）を登録不要のデモで試す](https://taski-app.com/?demo=true&utm_source=zenn&utm_medium=article&utm_campaign=13_edge_functions_security)**
 

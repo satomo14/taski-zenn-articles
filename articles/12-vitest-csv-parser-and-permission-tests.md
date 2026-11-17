@@ -6,7 +6,7 @@ topics: ["vitest", "typescript", "react", "testing", "個人開発"]
 published: true
 ---
 
-個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com)」を開発・運用しています。
+個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=12_vitest_csv_parser)」を開発・運用しています。
 
 個人開発の初期フェーズにおいて、よく耳にするのが 「**一人で作っているうちはテストコードを書く暇があったら新機能を実装しろ**」「**自分で画面を触れば十分**」 という言説です。
 
@@ -264,6 +264,6 @@ Vite を使っているプロジェクトなら、Vitest は設定10分で走り
 ---
 
 ### 実装したプロダクトに触れてみたい方へ
-今回紹介した「怪文書CSVも安全に取り込めるインポート機能」や「サクサク動くタスク管理UI」は、筆者が開発している **[Taski（タスキ）](https://taski-app.com)** のデモ環境で今すぐ無料・登録不要でお試しいただけます。
+今回紹介した「怪文書CSVも安全に取り込めるインポート機能」や「サクサク動くタスク管理UI」は、筆者が開発している **[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=12_vitest_csv_parser)** のデモ環境で今すぐ無料・登録不要でお試しいただけます。
 
-👉 [**Taski のデモを1秒で体験してみる（登録不要）**](https://taski-app.com/?demo=true)
+👉 [**Taski のデモを1秒で体験してみる（登録不要）**](https://taski-app.com/?demo=true&utm_source=zenn&utm_medium=article&utm_campaign=12_vitest_csv_parser)

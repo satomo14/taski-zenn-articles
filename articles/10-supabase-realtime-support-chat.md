@@ -10,7 +10,7 @@ published: true
 
 本格的なチャットSaaS（Intercom、Zendeskなど）は非常に強力ですが、月額数万円〜と個人開発の規模感にはかなり重い固定費になります。一方で、Googleフォームやメール窓口だけだと「ちょっとした質問やフィードバック」を送るハードルが高く、せっかくの初期ユーザーとの貴重な対話チャンスを逃してしまいがちです。
 
-そこで、筆者が開発・運営しているプロジェクト管理SaaS「[Taski（タスキ）](https://taski-app.com)」では、**Supabase（PostgreSQL + RLS + Realtime）をフル活用し、完全自前の問い合わせチャット基盤**を構築しました。
+そこで、筆者が開発・運営しているプロジェクト管理SaaS「[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=10_supabase_realtime_support_chat)」では、**Supabase（PostgreSQL + RLS + Realtime）をフル活用し、完全自前の問い合わせチャット基盤**を構築しました。
 
 月額の追加コストは実質0円。それでいて「**アプリ右下のチャットウィジェット**」「**運営者側の統合受信トレイ（Inbox）**」「**リアルタイム送受信**」「**不在時のメール通知**」までを備えた、実戦に耐えうる構成になっています。
 
@@ -260,8 +260,8 @@ if (!isOperator) {
 ---
 
 ### 💡 Taskiのデモ環境で体験できます
-この記事で解説した「問い合わせチャットウィジェット」は、プロジェクト管理SaaS「**[Taski（タスキ）](https://taski-app.com)**」のデモ画面（**会員登録不要・1秒で起動**）で、実際のUIや操作感をそのままお試しいただけます。
+この記事で解説した「問い合わせチャットウィジェット」は、プロジェクト管理SaaS「**[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=10_supabase_realtime_support_chat)**」のデモ画面（**会員登録不要・1秒で起動**）で、実際のUIや操作感をそのままお試しいただけます。
 
 画面右下のチャットアイコンをクリックして、スムーズな動作や添付ファイルのやり取りをぜひ触ってみてください！
 
-👉 **[Taski（タスキ）のデモ画面を体験してみる](https://taski-app.com)**
+👉 **[Taski（タスキ）のデモ画面を体験してみる](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=10_supabase_realtime_support_chat)**

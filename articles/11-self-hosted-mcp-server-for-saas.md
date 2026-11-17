@@ -6,7 +6,7 @@ topics: ["mcp", "typescript", "supabase", "cursor", "個人開発"]
 published: true
 ---
 
-個人開発で Redmine 代替のプロジェクト・課題管理 SaaS「[Taski](https://taski-app.com)」を開発・運用しています。
+個人開発で Redmine 代替のプロジェクト・課題管理 SaaS「[Taski](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=11_self_hosted_mcp_server)」を開発・運用しています。
 
 開発中、こんなストレスを感じたことはないでしょうか？
 
@@ -251,4 +251,4 @@ AI エディタが開発の主戦場になりつつある今、自社の Web サ
 ### 💡 Taski のデモ環境について
 この記事で紹介したタスク管理 SaaS「Taski」は、Redmine 移行や軽量カンバン・ガントチャートに対応したチーム向けツールです。**登録不要・1秒で起動する Web デモ** を公開していますので、軽快な操作感をぜひ体感してみてください。
 
-👉 [**Taski のデモをブラウザで試す（登録不要・1秒起動）**](https://taski-app.com)
+👉 [**Taski のデモをブラウザで試す（登録不要・1秒起動）**](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=11_self_hosted_mcp_server)

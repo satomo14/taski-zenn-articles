@@ -6,7 +6,7 @@ topics: ["react", "supabase", "performance", "vite", "個人開発"]
 published: true
 ---
 
-個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com)」を開発・運用しています。
+個人開発で Redmine / Backlog 代替のプロジェクト・課題管理 SaaS「[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=14_startup_requests_optimization)」を開発・運用しています。
 
 ある日、ログイン後にプロジェクトを開いたときの通信と本番ログをじっくり見直したところ、**背筋が凍る事実**に気づきました。
 
@@ -307,5 +307,5 @@ function stripDeferredPreloads(html) {
 
 ぜひ実際に触ってみて、チケット一覧の切り替えや、チケット詳細から `[[Wiki名]]` プレビューを開いたときのレスポンスを体感してみてください。
 
-👉 **[Taski デモ環境を今すぐ試す（登録不要）](https://taski-app.com/?demo=true)**
+👉 **[Taski デモ環境を今すぐ試す（登録不要）](https://taski-app.com/?demo=true&utm_source=zenn&utm_medium=article&utm_campaign=14_startup_requests_optimization)**
 

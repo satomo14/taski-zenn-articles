@@ -25,7 +25,7 @@ flowchart TD
 
 どちらを選んでも、スプリントの振り返りや「プロジェクトがなぜ遅延したのか？」を分析するための予実データが破綻してしまいます。
 
-筆者が開発しているプロジェクト管理SaaS「**[Taski（タスキ）](https://taski-app.com)**」でも、ユーザーから「期日を過ぎて終わったチケットが、ただ完了扱いになるだけで、どれくらい遅延したのか後から振り返れない」という声をいただきました。
+筆者が開発しているプロジェクト管理SaaS「**[Taski（タスキ）](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=09_due_date_vs_completed_at)**」でも、ユーザーから「期日を過ぎて終わったチケットが、ただ完了扱いになるだけで、どれくらい遅延したのか後から振り返れない」という声をいただきました。
 
 そこで今回、 **「目標期日（`due_date`）」と「実績完了日（`completed_at`）」を完全に分離し、ステータス変更と連動させながら現場の入力ストレスゼロで遅延を可視化する仕組み** を設計・実装しました。
 
@@ -256,4 +256,4 @@ RedmineやBacklog、Jiraなどの外部ツールからTaskiへ乗り換える際
 
 アカウント登録不要・1秒で立ち上がりますので、ぜひ触ってみてください！
 
-👉 **[Taski（タスキ）のデモを試してみる](https://taski-app.com)**
+👉 **[Taski（タスキ）のデモを試してみる](https://taski-app.com/?utm_source=zenn&utm_medium=article&utm_campaign=09_due_date_vs_completed_at)**
