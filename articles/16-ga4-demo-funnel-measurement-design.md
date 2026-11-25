@@ -98,14 +98,7 @@ export const trackSignupSubmit = () => trackEvent('signup_submit');
 export const trackSignupError = (kind: AuthErrorKind) => trackEvent(`signup_error_${kind}`);
 ```
 
-```mermaid
-flowchart LR
-    S["auth_form_signup_start\n(入力開始)"] --> Sub["signup_submit\n(送信)"]
-    Sub -->|"検証NG"| V["signup_error_validation"]
-    Sub -->|"APIエラー"| E["signup_error_duplicate 等"]
-    Sub -->|"確認待ち"| P["signup_confirmation_pending"]
-    P -->|"メールクリック"| C["signup_email_confirmed"]
-```
+![登録フォームの離脱計測（イベント名分離フロー）](/images/16-ga4-signup-flow.png)
 
 これにより、Python スクリプト（`scripts/ga4_report.py`）から `eventName` を取得するだけで、カスタムディメンション設定ゼロで即座に離脱ポイントが一覧できるようになりました。
 
